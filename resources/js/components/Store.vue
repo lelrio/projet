@@ -5,7 +5,7 @@
     </div>
     <b-tabs content-class="mt-3" justified id="menu">
       <b-tab title="Sacoche">
-          //afficher les futurs sacoches
+
       </b-tab>
     </b-tabs>
   </div>
@@ -30,3 +30,9 @@
     }
 </style>
 
+<script>
+
+export default {
+
+}
+</script>

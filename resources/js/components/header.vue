@@ -1,40 +1,18 @@
 <template>
   <div class="header">
-    <div id="nav">  
-      <b-navbar toggleable="lg">
-        <b-navbar-brand href="Home">
-          <img src="/images/logo_final.png" id="logo" alt="logo">
-        </b-navbar-brand>
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-        <b-collapse id="nav-collapse" is-nav>
-          <b-row>
-            <b-col>
-              <router-link to="/">Home</router-link>
-            </b-col>
-            <b-col>
-              <router-link to="/about">About</router-link>
-            </b-col>
-            <b-col>
-              <router-link to="/store">Store</router-link>
-            </b-col>
-            <b-col>
-              <router-link to="/panier"> Panier </router-link>
-            </b-col>
-          </b-row>
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown style="margin-right:50px;">
-              <template slot="button-content">
-                <a>Compte</a>
-              </template>
-              <div class="logs" >
-                <a href="/login" class="log">Login</a>
-                <a href="/register" class="log">Sign in</a>
-              </div>
-            </b-nav-item-dropdown>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
+    <b-navbar id="contain">
+      <b-navbar-brand href="/">
+        <img src="/images/white.png" id="logo" alt="logo">
+      </b-navbar-brand>
+      <b-nav-item to="/">Home</b-nav-item>
+      <b-nav-item to="/about">About</b-nav-item>
+      <b-nav-item href="/shop">Store</b-nav-item>
+      <b-nav-item href="/account" class="break">Account</b-nav-item>
+      <b-dropdown text="User" right class="break mt-1">
+        <b-dropdown-item href="/login">Login</b-dropdown-item>
+        <b-dropdown-item href="/register">Register</b-dropdown-item>
+      </b-dropdown>
+    </b-navbar>
   </div>
 </template>
 
@@ -45,30 +23,33 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+li{
+  list-style: none;
+}
 #logo{
   height: 100px;
   width: 100px;
 }
-.logs{
+#contain{
   display: flex;
-  flex-direction: column;
-  .log{
-    padding: 20px;
-  }
+  justify-content: space-evenly;
+  background-color: black;
 }
-.ml{
-  margin-right: 100px;
+#contain a{
+  color: white;
 }
-#nav {
-  .col {
-    margin-left: 100px;
-  }
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+b-nav-item-dropdown{
+  color: white;
 }
+@media screen and (max-width: 640px) {
+  .break {
+    display:block;
+    clear:both;
+  }
+  #contain{
+    overflow: scroll;
+  }
+  #logo{margin-left: 170px;}
+}
+
 </style>

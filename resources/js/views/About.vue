@@ -1,22 +1,23 @@
 <template>
-  <div class="about">
-    <div class="contain">
-      <div class="row" id="centered">
-        <b-col md="8">
-          <h1>Voici ce que vous pourrez acheter</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sint accusamus adipisci, dolores, reiciendis architecto asperiores praesentium, quam autem explicabo iure nisi id quasi tempore iusto laborum qui iste eius?</p>
-          <img class="img-fluid" src="/images/entreprise.jpg" alt>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempora, beatae vel inventore accusamus velit dolorem neque ipsa! Explicabo, cupiditate excepturi. Delectus, esse hic! Fugiat doloremque eius voluptatem deleniti mollitia.</p>
-          <div class="btnstore">
-            <b-button variant="outline-dark" href="/store">Boutique</b-button>
-          </div>
-        </b-col>
+  <div class="about mt-5">
+    <div class="row" id="centered">
+      <h1>Voici notre entreprise !</h1>
+      <p>Pleine de jeune talent et d'ambition nous travaillons afin de vous fournir les meilleurs appareils Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero nulla atque adipisci est maxime quis ullam et nam ratione cumque explicabo vel, dicta similique veritatis voluptatem molestiae voluptate non eum? </p>
+      <img class="img-fluid" src="/images/entreprises.jpg" alt>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempora, beatae vel inventore accusamus velit dolorem neque ipsa! Explicabo, cupiditate excepturi. Delectus, esse hic! Fugiat doloremque eius voluptatem deleniti mollitia.</p>
+      <div class="btnstore">
+        <b-button variant="outline-dark" href="/shop">Boutique</b-button>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+@media screen and (max-width: 640px) {
+  .about{
+    padding: 20px;
+  }
+}
 .btnstore{
   margin-top: 50px;
 }
@@ -43,6 +44,9 @@ label{
   width: 250px;
   padding-bottom: 80px;
 }
-
+.img-fluid{
+  height: 600px;
+  width: 100%;
+}
 </style>
 

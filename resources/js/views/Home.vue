@@ -3,27 +3,27 @@
     <div class="top">
       <div class="container">
         <div class="text_home">
-          <p>
+          <p class="text">
             Bienvenue sur Shootix
-            <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, quam sit porro impedit natus beatae et cumque optio eius, numquam aliquid vitae expedita! Animi repellat officia aliquid totam quam architecto!Lore Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veniam, cumque optio unde voluptas iste enim nostrum aspernatur sed impedit mollitia expedita? Accusantium illum laudantium animi, laboriosam ratione distinctio sapiente.
+            <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, quam sit porro impedit natus beatae et cumque optio eius
           </p>
-          <b-button variant="outline-dark" href="/store">Vers la boutique</b-button>
+          <b-button variant="outline-dark" href="/shop" id="btn_shop">Vers la boutique</b-button>
         </div>
       </div>
     </div>
     <b-container fluid class="bv-example-row mt-2">
       <b-row>
-        <b-col md="4" class="p-3">
+        <b-col md="4" class="p-3 text-center">
           <img src="/images/app1.png" alt>
-          <p>image 1</p>
+          <p class="text-center">Super Appareil photo</p>
         </b-col>
-        <b-col md="4" class="p-3">
+        <b-col md="4" class="p-3 text-center">
           <img src="/images/appa2.jpg" alt>
-          <p>image 2</p>
+          <p class="text-center">Appareil cool</p>
         </b-col>
-        <b-col md="4" class="p-3">
+        <b-col md="4" class="p-3 text-center">
           <img src="/images/appa3.jpg" alt>
-          <p>image 3</p>
+          <p class="text-center">Appareil moins cool</p>
         </b-col>
       </b-row>
     </b-container>
@@ -34,19 +34,7 @@
           <div class="pstg">
             <h2>Voici ce que vous pourrez acheter</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In aliquam obcaecati vitae doloremque quos, omnis blanditiis necessitatibus! Id mollitia officiis necessitatibus cumque adipisci maiores repellat sit quos. Velit, accusamus veniam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore quia iusto error voluptatibus labore? Obcaecati, nam dolorum. Assumenda dolorum enim repellendus nisi impedit numquam cupiditate maxime voluptatem dolorem? Totam, explicabo.</p>
-            <b-button variant="outline-dark" href="/store">Go to the store</b-button>
-          </div>
-        </div>
-      </b-row>
-    </b-container>
-    <hr class="split">
-    <b-container fluid class="bv-example-row mt-5">
-      <b-row>
-        <div class="buy">
-          <div class="pstg">
-            <h2>Voici notre newsletter</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In aliquam obcaecati vitae doloremque quos, omnis blanditiis necessitatibus! Id mollitia officiis necessitatibus cumque adipisci maiores repellat sit quos. Velit, accusamus veniam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore quia iusto error voluptatibus labore? Obcaecati, nam dolorum. Assumenda dolorum enim repellendus nisi impedit numquam cupiditate maxime voluptatem dolorem? Totam, explicabo.</p>
-            <b-button variant="outline-dark" href="/newsletter">Go to the newsletter</b-button>
+            <b-button variant="outline-dark" href="/shop">Go to the store</b-button>
           </div>
         </div>
       </b-row>
@@ -88,6 +76,20 @@
   padding: 50px;
   width: 70%;
 }
+
+@media screen and (max-width: 640px) {
+  .text_home {
+    display: block;
+  height: 450px;
+  }
+  .text{
+    height: 200px;
+  }
+  #btn_shop{
+    margin-top: 100px;
+  }
+}
+
 .split {
   width: 100%;
   border: 2px solid black;
@@ -108,6 +110,9 @@
 }
 .pstg a {
   float: right;
+}
+.home{
+  margin-top: 50px;
 }
 </style>
 

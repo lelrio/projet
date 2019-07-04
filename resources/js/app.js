@@ -3,15 +3,18 @@ import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
+
+Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 
 import App from './views/App'
 import About from './views/About'
-import Contact from './views/Contact'
-import Store from './views/Store'
 import Home from './views/Home'
+
 
 const router = new VueRouter({
     mode: 'history',
@@ -27,17 +30,7 @@ const router = new VueRouter({
             component: About
 
         },
-        {
-            path: '/contact',
-            name: 'contact',
-            component: Contact
-        },
-        {
-            path: '/Store',
-            name: 'store',
-            component: Store
-
-        },
+       
     ],
 });
 

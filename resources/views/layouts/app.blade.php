@@ -18,27 +18,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('style')
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <b-navbar-brand href="/">
+                    <img src="/images/logo_final.png" id="logo" alt="logo">
+                </b-navbar-brand>                
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                <div class="navigation">
+                    <ul class="nav">
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -49,18 +42,28 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
+                            @if(Auth::user()->admin)
+                                <li class="nav-item">
                                 <a class="nav-link" href="/admin">
                                     Admins
                                 </a>
-                            </li>
-                            <li class="nav-item">
+                                </li>
+                                <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products')}}">
                                     Objects
                                 </a>
+                                </li> 
+                            @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('shop') }}">
+                                    Shop
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>Cart</a>
+                            </li>   
+                            <li class="nav-item">
+                            <a class="nav-link" href="{{ route('account') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
                             </li>
@@ -75,8 +78,7 @@
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                      @csrf
                                  </form>
-                            </li>    
-                        
+                            </li>                         
                         @endguest
                     </ul>
                 </div>
@@ -88,4 +90,25 @@
         </main>
     </div>
 </body>
+<style>
+#logo{
+    height: 100px;
+    width: 100px;
+}
+li a{
+      color: black;
+  }
+@media screen and (max-width: 775px) {
+  .navigation {
+    margin-right: 50px;
+    width: 275px;;
+  }
+  #logo{
+      display: none;
+  }
+  li a{
+      color: black;
+  }
+}
+</style>
 </html>

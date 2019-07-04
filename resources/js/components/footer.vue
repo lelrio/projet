@@ -3,21 +3,17 @@
     <b-col md="6" offset-md="6" class="footerrs">
       <div class="row" id="test">
         <b-col md="5" class="left">
-          <li>Boutique</li>
-          <li>Contact</li>
-          <li>À propos</li>
-        </b-col>
-        <b-col md="7">
-          <li>Mon compte</li>
-          <li>Conditions générales</li>
-          <li>Mentions légales</li>
+          <a href="/shop">Store</a>
+          <b-nav-item to="/about">About</b-nav-item>
+          <a href="/account">Account</a>
+          
         </b-col>
       </div>
       <div class="row">
-        <b-img src="images/facebook.png" fluid alt="Responsive image"></b-img>
-        <b-img src="images/instagram.png" fluid alt="instagra icone"></b-img>
-        <b-img src="images/twitter.png" fluid alt="twitter icone"></b-img>
-        <b-img src="images/linkedin.png" fluid alt="linkedin icone"></b-img>
+        <a href="https://www.facebook.com/"><b-img src="images/facebook.png" fluid alt="Responsive image"></b-img></a> 
+        <a href="https://www.instagram.com/?hl=fr"><b-img src="images/instagram.png" fluid alt="instagra icone"></b-img></a> 
+        <a href="https://www.linkedin.com"><b-img src="images/twitter.png" fluid alt="twitter icone"></b-img></a> 
+        <a href="https://twitter.com/login?lang=fr"><b-img src="images/linkedin.png" fluid alt="linkedin icone"></b-img></a> 
       </div>
     </b-col>
   </div>
@@ -26,12 +22,20 @@
 <script>
 export default {};
 </script>
-<style lang="scss">
+<style scoped>
+.nav-link{
+  display: inline;
+}
 .footer {
   background-image: url("/images/fer.png");
   background-size: cover;
   height: 300px;
   margin-top: 50px;
+}
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
 }
 #test{
   display: flex!important;
@@ -59,9 +63,9 @@ li {
 }
 .left{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
-  flex-direction: column;
+  color: white;
 }
 
 </style>
